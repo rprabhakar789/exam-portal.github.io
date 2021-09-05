@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/exam-portal/static/css/main.e326b06f.chunk.css",
+    "main.js": "/exam-portal/static/js/main.f3a00377.chunk.js",
+    "main.js.map": "/exam-portal/static/js/main.f3a00377.chunk.js.map",
+    "runtime-main.js": "/exam-portal/static/js/runtime-main.d4e86725.js",
+    "runtime-main.js.map": "/exam-portal/static/js/runtime-main.d4e86725.js.map",
+    "static/js/2.4a23c79e.chunk.js": "/exam-portal/static/js/2.4a23c79e.chunk.js",
+    "static/js/2.4a23c79e.chunk.js.map": "/exam-portal/static/js/2.4a23c79e.chunk.js.map",
+    "static/js/3.24ab63f6.chunk.js": "/exam-portal/static/js/3.24ab63f6.chunk.js",
+    "static/js/3.24ab63f6.chunk.js.map": "/exam-portal/static/js/3.24ab63f6.chunk.js.map",
+    "index.html": "/exam-portal/index.html",
+    "static/css/main.e326b06f.chunk.css.map": "/exam-portal/static/css/main.e326b06f.chunk.css.map",
+    "static/js/2.4a23c79e.chunk.js.LICENSE.txt": "/exam-portal/static/js/2.4a23c79e.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/exam-portal/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d4e86725.js",
+    "static/js/2.4a23c79e.chunk.js",
+    "static/css/main.e326b06f.chunk.css",
+    "static/js/main.f3a00377.chunk.js"
+  ]
+}
