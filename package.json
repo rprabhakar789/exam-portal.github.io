@@ -1,7 +1,7 @@
 {
   "name": "exam-portal",
   "version": "0.1.0",
-  "homepage": "http://rprabhakar789.github.io/exam-portal"
+  "homepage": "http://rprabhakar789.github.io/exam-portal",
   "private": true,
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
