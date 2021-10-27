@@ -13,17 +13,27 @@ import Divider from '@material-ui/core/Divider';;
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '100%',
+        width: '98%',
         maxWidth: 360,
-        backgroundColor:"#ffffff",
-        margin:"10px"
+        margin:10,
+        marginTop:"20px",
+        ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
+          margin: 'auto',
+          marginTop:5
+        }
     },
+    listItem: {
+      '&:hover': {
+       background: "",
+    },
+    }
+
 }));
 
 
 export default function SideBar(props) {
     const classes = useStyles();
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
@@ -34,6 +44,7 @@ export default function SideBar(props) {
         <div className={classes.root}>
             <List component="nav" aria-label="main mailbox folders">
                 <ListItem
+                    className={classes.listItem}
                     button
                     selected={selectedIndex === 0}
                     onClick={(event) => handleListItemClick(event, 0)}
@@ -41,6 +52,7 @@ export default function SideBar(props) {
                     Available Quizes
                 </ListItem>
                 <ListItem
+                    className={classes.listItem}
                     button
                     selected={selectedIndex === 1}
                     onClick={(event) => handleListItemClick(event, 1)}
@@ -48,6 +60,7 @@ export default function SideBar(props) {
                     Take Quiz
                 </ListItem>
                 <ListItem
+                    className={classes.listItem}
                     button
                     selected={selectedIndex === 2}
                     onClick={(event) => handleListItemClick(event, 2)}
@@ -58,6 +71,7 @@ export default function SideBar(props) {
             <Divider />
             <List component="nav" aria-label="secondary mailbox folder">
                 <ListItem
+                    className={classes.listItem}
                     button
                     selected={selectedIndex === 3}
                     onClick={(event) => handleListItemClick(event, 2)}

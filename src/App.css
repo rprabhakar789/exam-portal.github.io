@@ -24,8 +24,60 @@
   color: white;
 }
 
+/*
+.main-screen{
+  display: flex;
+}
+.side-bar{
+  width:25%;
+}
+.main-bar{
+  width:75%;
+  margin:10px;
+}
+@media screen and (max-width: 600px) {
+    .main-screen {
+        display: block;
+        margin:auto;
+        justify-content: center;
+    }
+    .side-bar{
+      width:100%;
+      margin:auto;
+    }
+    .main-bar{
+      width:100%;
+      margin:auto;
+
+    }
+}
+*/
 .App-link {
   color: #61dafb;
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }
 
 @keyframes App-logo-spin {

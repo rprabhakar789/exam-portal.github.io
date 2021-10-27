@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -13,14 +13,22 @@ import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    padding:"10px",
+      width: '100%',
+      margin:"20px",
+      ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
+        margin: 'auto',
+        marginTop:20
+      }
   },
+
   title: {
     fontSize: 14,
   },
 });
 
-const allQuizes = [
+
+
+const Quizes = [
   {
     topic: "Java Basics",
     description: "Test your basic understanding of java in this test.",
@@ -50,23 +58,43 @@ const allQuizes = [
 export default function AllQuiz() {
     const classes = useStyles();
     const [selectedIndex, setSelectedIndex] = React.useState(1);
-
+    const [isLoaded, setIsLoaded] = React.useState(false);
+    const [allQuizes, setQuizes] = React.useState([]);
+    const [error, setError] = React.useState(false);
+    useEffect(() => {
+        fetch("https://myexamportal-backend.herokuapp.com/api/getQuiz")
+          .then(res => res.json())
+          .then(
+            (result) => {
+              //console.log("found result.size "+result.size());
+              setIsLoaded(true);
+              setQuizes(result);
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+              setIsLoaded(true);
+              setError(error);
+            }
+          )
+      }, [])
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
     };
     return (
-      <Grid>
+      <Grid style={{margin:"auto"}}>
      <Grid item xs={12}>
        <Grid container>
          {  allQuizes.map((quiz)=>{
              return(
-               <Card variant="outlined" className={classes.root} style={{display:"block", margin:"10px",width:"275px"}}>
+               <Card variant="outlined" className={classes.root} style={{display:"block",width:"275px"}}>
                   <CardContent>
                     <Typography color="textSecondary" gutterBottom>
                       {quiz.topic}
                     </Typography>
                     <Typography variant="body2" component="p">
-                     {quiz.description}
+                     {quiz.desc}
                       <br />
                       <br/>
                       <div style={{display:"flex",justifyContent: "space-between"}}>
