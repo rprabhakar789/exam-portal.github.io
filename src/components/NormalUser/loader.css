@@ -1,0 +1,93 @@
+
+.loader{
+	width:1000px;
+	height:1000px;
+	display: inline-block;
+	background:
+    radial-gradient(farthest-side,currentColor 90%,#0000),
+    radial-gradient(farthest-side,currentColor 90%,#0000),
+    radial-gradient(farthest-side,currentColor 90%,#0000);
+	background-size: 20px 20px;
+	background-repeat:no-repeat;
+	animation: move2 2s infinite linear;
+}
+@keyframes move{0%{background-position:
+					30% 100%,
+					35% 100%,
+					40% 100%
+					}
+				22%{
+					background-position:
+					350px 20%,
+					20% 20%,
+					450px 20%;
+				}
+				45%{
+					background-position:
+					510px 20%,
+					530px 20%,
+					550px 20%
+					}
+				50%{
+					background-position:
+					510px 20%,
+					530px 20%,
+					550px 20%
+				}
+				73%{
+					background-position:
+					350px 20%,
+					20% 20%,
+					450px 20%;
+				}
+				95%{background-position:
+					310px 20%,
+					330px 20%,
+					350px 20%
+					}
+				100% {background-position:
+					310px 20%,
+					330px 20%,
+					350px 20%
+					}
+			}
+@keyframes move2{0%{background-position:
+					310px 400px,
+					330px 400px,
+					350px 400px
+					}
+				22%{
+					background-position:
+					350px 400px,
+					400px 400px,
+					450px 400px;
+				}
+				45%{
+					background-position:
+					510px 400px,
+					530px 400px,
+					550px 400px
+					}
+				50%{
+					background-position:
+					510px 400px,
+					530px 400px,
+					550px 400px
+				}
+				73%{
+					background-position:
+					350px 400px,
+					400px 400px,
+					450px 400px;
+				}
+				95%{background-position:
+					310px 400px,
+					330px 400px,
+					350px 400px
+					}
+				100% {background-position:
+					310px 400px,
+					330px 400px,
+					350px 400px
+					}
+					}

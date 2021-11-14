@@ -13,7 +13,7 @@ import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    padding:"10px"
+    padding:"10px",
   },
   title: {
     fontSize: 14,
@@ -52,7 +52,7 @@ export default function AttemptedQuiz() {
        <Grid container>
          { attemptedQuizes.map((quiz)=>{
            return(
-             <Card variant="outlined" className={classes.root} style={{display:"block", margin:"10px",width:"275px"}}>
+             <Card variant="outlined" className={classes.root} style={{display:"block", margin:"10px",width:"275px",borderRadius:"15px"}}>
                 <CardContent>
                   <Typography color="textSecondary" gutterBottom>
                     {quiz.topic}

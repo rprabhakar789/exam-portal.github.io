@@ -11,16 +11,20 @@ import Divider from '@material-ui/core/Divider';
 import { Grid } from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
+import './loader.css';
+//const baseUrl = "http://127.0.0.1:8586";
 
-const baseUrl = "http://127.0.0.1:8586";
+const baseUrl = "https://myexamportal-backend.herokuapp.com/"
 
 const useStyles = makeStyles({
   root: {
-      width: '95%',
+      width: '400px',
       boxShadow: "1.8px 3.5px 3.5px hsl(0deg 0% 0% / 0.45)",
       transition: "0.25s ease-in-out",
-      backgroundColor: '#fafad2',
-      margin:"10px",
+      justifyContent:"space-around",
+      alignItems:"center",
+      margin:"20px",
+      spacing:20,
       borderRadius: 15,
       ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
         margin: 'auto',
@@ -85,7 +89,7 @@ export default function AllQuiz() {
             (result) => {
               //console.log("found result.size "+result.size());
               setIsLoaded(true);
-              setQuizes(allQuizes.concat(result));
+              setQuizes(result.concat(allQuizes));
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -101,23 +105,29 @@ export default function AllQuiz() {
     };
     let history = useHistory();
 
-
     const handleSubmit = (event, index) => {
         setSelectedIndex(index);
-          history.push("/quiz");
+          history.push({
+            pathname: "/quiz",
+            state: { quizId: index }
+          });
     };
     const list = [1,2,3];
 
     return (
-      <Grid style={{margin:"auto"}}>
+    <Grid style={{margin:"auto"}}>
      <Grid item xs={12}>
-       <Grid style={{display:"flex"}} container>
+     {
+       allQuizes.length<=4?
+       <Grid xs={12}>loading...</Grid>
+       :
+       <Grid container item m={3}>
          {
           list.map((e)=>{
             return(
            allQuizes.map((quiz)=>{
              return(
-               <Card variant="outlined" className={classes.root} style={{display:"block",width:"275px"}}>
+               <Card variant="outlined" className={classes.root} style={{display:"block",width:"400px"}}>
                   <CardContent>
                     <Typography color="textSecondary" gutterBottom>
                       {quiz.topic}
@@ -149,6 +159,7 @@ export default function AllQuiz() {
          }
 
        </Grid>
+     }
      </Grid>
      </Grid>
     );

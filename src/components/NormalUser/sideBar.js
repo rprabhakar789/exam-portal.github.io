@@ -54,14 +54,6 @@ export default function SideBar(props) {
                 <ListItem
                     className={classes.listItem}
                     button
-                    selected={selectedIndex === 1}
-                    onClick={(event) => handleListItemClick(event, 1)}
-                >
-                    Take Quiz
-                </ListItem>
-                <ListItem
-                    className={classes.listItem}
-                    button
                     selected={selectedIndex === 2}
                     onClick={(event) => handleListItemClick(event, 2)}
                 >
